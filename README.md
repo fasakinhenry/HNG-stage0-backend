@@ -1,15 +1,23 @@
-# stage0-backend
+# Gender Classification API
 
-To install dependencies:
+## Endpoint
+GET /api/classify?name={name}
 
-```bash
-bun install
-```
+## Description
+Calls Genderize API and returns processed response.
 
-To run:
+## Example
+/api/classify?name=john
 
-```bash
-bun run index.js
-```
-
-This project was created using `bun init` in bun v1.3.11. [Bun](https://bun.com) is a fast all-in-one JavaScript runtime.
+## Response
+{
+  "status": "success",
+  "data": {
+    "name": "john",
+    "gender": "male",
+    "probability": 0.99,
+    "sample_size": 1234,
+    "is_confident": true,
+    "processed_at": "ISO timestamp"
+  }
+}
